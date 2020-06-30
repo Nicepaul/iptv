@@ -12,7 +12,6 @@ To watch IPTV you just need to paste this link `https://iptv-org.github.io/iptv/
 
 Also you can instead use one of these playlists:
 
-- `https://iptv-org.github.io/iptv/index.full.m3u` (grouped by country and category)
 - `https://iptv-org.github.io/iptv/index.country.m3u` (grouped by country)
 - `https://iptv-org.github.io/iptv/index.category.m3u` (grouped by category)
 - `https://iptv-org.github.io/iptv/index.language.m3u` (grouped by language)
@@ -31,12 +30,53 @@ Or select one of the playlists from the list below.
 
 #include "./.readme/_countries.md"
 
+
+## For Developers
+
+In addition to the above methods, you can also get a list of all available channels in JSON format.
+
+To do this, you just have to make a GET request to:
+
+```
+https://iptv-org.github.io/iptv/channels.json
+```
+
+If successful, you should get the following response:
+
+```
+[
+  ...
+  {
+    "name": "CNN",
+    "logo": "https://i.imgur.com/ilZJT5s.png",
+    "url": "http://ott-cdn.ucom.am/s27/index.m3u8",
+    "category": "News",
+    "language": [
+      {
+        "code": "eng",
+        "name": "English"
+      }
+    ],
+    "country": {
+      "code": "us",
+      "name": "United States"
+    },
+    "tvg": {
+      "id": "cnn.us",
+      "name": "CNN",
+      "url": "http://epg.streamstv.me/epg/guide-usa.xml.gz"
+    }
+  },
+  ...
+]
+```
+
 ## Resources
 
-You can find a links to various IPTV related resources in a separate [iptv-org/awesome-iptv](https://github.com/iptv-org/awesome-iptv) repository.
+You can find links to various IPTV related resources in this repository [iptv-org/awesome-iptv](https://github.com/iptv-org/awesome-iptv).
 
 ## Contribution
 
 Please make sure to read the [Contributing Guide](.github/CONTRIBUTING.md) before making a pull request.
 
-If you just found an error or have any suggestions on how to organize a playlist please send an [issue](https://github.com/iptv-org/iptv/issues).
+If you find an error or have any suggestions on how to organize a playlist, please send an [issue](https://github.com/iptv-org/iptv/issues).
